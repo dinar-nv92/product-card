@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'montserrat';
+  src: url('fonts/Montserrat/static/Montserrat-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background: white;
+  font-family: 'montserrat', sans-serif;
+  font-size: 13px;
+  color: #515076;
+}
+
+.tittle_card {
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 78px;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.description {
+  line-height: 18px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
+
+.application {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+.product_card {
+  display: inline-block;
+  background: rgb(240, 237, 237);
+  width: 340px;
+  height: 573px;
+  margin-top: 110px;
+  margin-left: 45px;
+}
+
+.picture {
+  margin: 25px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  margin-left: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.compound {
+  line-height: 18px;
+  margin-top: 5px;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 24px;
+  width: 290px;
+  margin-left: 150px;
+}
+  
+
+.bold {
+  font-weight: 700;
+  margin-left: 25px;
+}
