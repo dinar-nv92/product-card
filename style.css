@@ -7,10 +7,21 @@
 }
 
 body {
-  background: white;
+  background: rgb(216, 213, 213);
   font-family: 'montserrat', sans-serif;
   font-size: 13px;
   color: #515076;
+}
+
+.card {
+  background: white;
+  background-image: url("/img/flowers.jpg");
+  background-repeat: no-repeat;
+  background-position: 85px 0px;
+  width: 1280px;
+  height: 1715px;
+  align-content: center;
+  margin: auto;
 }
 
 .tittle_card {
@@ -18,7 +29,14 @@ body {
   font-weight: 400;
   line-height: 78px;
   text-align: center;
-  padding-top: 200px;
+}
+
+.cosmetics { 
+  margin-top: 110px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 45px;
 }
 
 .description {
@@ -40,8 +58,6 @@ body {
   background: rgb(240, 237, 237);
   width: 340px;
   height: 573px;
-  margin-top: 110px;
-  margin-left: 45px;
 }
 
 .picture {
