@@ -15,7 +15,7 @@ body {
 
 .card {
   background: white;
-  background-image: url("/img/background_image.jpg");
+  background-image: url("/img/flowers.jpg");
   background-repeat: no-repeat;
   background-position: 85px 0px;
   width: 1280px;
@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-.net {
+.cosmetics { 
   margin-top: 110px;
   display: flex;
   justify-content: center;
