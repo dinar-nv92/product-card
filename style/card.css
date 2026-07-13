@@ -19,6 +19,7 @@
 }
 
 .card__description {
+  font-size: 13px;
   line-height: 18px;
   margin-left: 25px;
   margin-bottom: 5px;
@@ -41,6 +42,6 @@
 }
 
 .card__price--bold {
-  font-family: 'montserrat-bold', sans-serif;
+font-family: 'montserrat-bold', sans-serif;
   margin: 0;
 }
