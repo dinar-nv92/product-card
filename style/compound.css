@@ -1,0 +1,15 @@
+.compound {
+  line-height: 18px;
+  margin-top: 5px;
+}
+
+.compound__name{
+  line-height: 18px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  padding-top: 15px;
+}
+
+.compound__list {
+  margin: 5px;
+}

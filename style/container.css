@@ -1,0 +1,10 @@
+.container {
+  background: white;
+  background-image: url("/img/flowers.jpg");
+  background-repeat: no-repeat;
+  background-position: 85px 0px;
+  width: 1280px;
+  height: 1715px;
+  align-content: center;
+  margin: auto;
+}
