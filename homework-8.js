@@ -26,9 +26,8 @@ auto[master] = developer
 console.log(auto)
 
 //5.Проверка наличия максимальной скорости
-let maxSpeed;
-function addMaxSpeed() {
-  if (maxSpeed in auto) {return
+function addMaxSpeed(obj) {
+  if ("maxSpeed" in auto) {return
   } else {
     Object.assign(auto, {maxSpeed: 220})
   }
