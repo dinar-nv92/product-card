@@ -13,11 +13,14 @@ console.log(furnitures.includes("кровать"))
 
 // 4. Функция переворачивающая массив
 function reverseArray(array) {
-  const reverseResult = array.reverse()
-  console.log(reverseResult)
+  return [...array].reverse();  
 };
-reverseArray(numberArray);
-reverseArray(furnitures);
+
+const reverseNumber = reverseArray(numberArray);
+const reverseFurnitures = reverseArray(furnitures);
+
+console.log(reverseNumber);
+console.log(reverseFurnitures);
 
 //УРОВЕНЬ2
 // 7. Массив комментариев пользователей с .com
