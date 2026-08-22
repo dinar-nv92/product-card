@@ -44,7 +44,7 @@ if (numberOfCards === null) {
   return null
 } else {
     const number = Number(numberOfCards);
-  if (Number.isNaN(number) || number > 5 || number < 1) {
+  if (Number.isNaN(number) || number > 5 || number < 1 || !Number.isInteger(number)) {
     console.log('Некоректный ввод');
   return null
   } else {
@@ -54,7 +54,7 @@ if (numberOfCards === null) {
 }};
 
 const number = getNumberOfCards()
-const renderWithPrompt = cosmeticList.filter((num) => number >= num.id)
+const renderWithPrompt = cosmeticList.slice(0, number);
 renderCards(renderWithPrompt)
 
 
