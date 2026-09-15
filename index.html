@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/style/products.css">
     <link rel="stylesheet" href="/style/container.css">
     <link rel="stylesheet" href="/style/button.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <link rel="stylesheet" href="/style/modal-window.css">
   </head>
   <body>
     <main class="main">
@@ -44,10 +46,69 @@
         </ul>
       </div>
     </main>
+    
+    <footer>
+      <div class="footer__content">
+        <div class="footer-first">
+          <h1 class="footer__tittle">Product Cards</h1>
+          <p>У Нас Самые Лучшие Продукты Для Кожи!</p>
+          <div class="ikon">
+            <img src="/img/vector_telegram.png" alt="Telegram">
+            <img src="/img/vector_vk.png" alt="VK">
+          </div>
+        </div>
+        <div class="subscription-wrapper">
+          <p class="subscription">Подпишись на наши акции:</p>
+          <form id="email-form">
+            <div class="email-form__line"></div>
+            <input class="email-form__input" placeholder="Введи Email..." name="email" type="email">
+            <button class="email-form__button" type="submit">Подписаться</button>
+          </form>
+          <button id ="registration-button">Регистрация</button>
+        </div>
+        <nav class="menu">
+          <span>Быстрые ссылки</span>
+          <ul class="menu__list">
+            <li class="menu__list">Главная</li>
+            <li class="menu__list">Магазин</li>
+            <li class="menu__list">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__line"></div>
+      <p class="footer__website">www.product-cards.com©all right reserve</p>
+    </footer>
+    <div class="modal-overlay"></div>
+    <div class="modal">
+      <div class="modal__head">
+        <h3>Регистрация</h3>
+        <button id="closeModalWindow">Закрыть</button>
+      </div>
+      <div>
+        <p>Имя</p>
+        <input id="userName" class="modal__input" required placeholder="Ваше имя">
+        <p>Фамилия</p>
+        <input id="userLastName" class="modal__input" required placeholder="Ваша фамилия">
+        <p>Дата рождения</p>
+        <input id="userBirthday" class="modal__input" placeholder="Ваша дата рождения" type = "date">
+        <p>Логин</p>
+        <input id="userLogin" class="modal__input" required placeholder="Ваш логин">
+        <p>Пароль</p>
+        <input id="userPassword" class="modal__input" placeholder="Ваш пароль" type = "password">
+        <p>Введите пароль ещё раз</p>
+        <input id="userDoublePassword" class="modal__input" placeholder="Ваш пароль" type = "password">
+        <div class="modal__navigation">
+          <button id="resetModalInputBtn" class="modal__navigation-button">Сбросить всё</button>
+          <button id="submitTheFormBtn" class="modal__navigation-button">Отправить</button>
+        </div>
+      </div>
+    </div>
+    
     <script src="main.js"></script>
     <script src="homework-7.js"></script>
     <script src="homework-8.js"></script>
     <script type="module" src="homework-9.js"></script>
     <script type="module" src="homework-10.js"></script>
+    <script type="module" src="homework-11.js"></script>
   </body>
-  </html>
+  </html></div>
