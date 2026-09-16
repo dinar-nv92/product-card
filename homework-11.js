@@ -1,7 +1,8 @@
 4. //Добавление валидации почты и вывод в консоль лог объекта { email: 'введенная почта' }
 const mailFromFooter = document.querySelector('.email-form__input');
 const subscriptionToShares = document.querySelector('.email-form__button');
-subscriptionToShares.addEventListener('click', (event) => {
+const subForm = document.getElementById('email-form')
+subForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const email = mailFromFooter.value
    if (!email || email.length > 254 || /\s/.test(email)) {
