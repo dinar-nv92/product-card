@@ -1,3 +1,12 @@
+import './Modal.js';
+import './Form.js';
+import './homework-7.js';
+import './homework-8.js';
+import './homework-9.js';
+import './homework-10.js';
+import './homework-11.js';
+
+
 //Переменные
 const cosmeticCard = document.querySelector('.products__item');
 const allCards = document.querySelectorAll('.products__item');
@@ -55,6 +64,34 @@ changeColorButton.addEventListener('click', () => {
   isViolet = !isViolet;
 })
 
+//ДЗ№12. Создание классов
+class WashingMachine {
+  constructor(brand, model, carrying) {
+    this.brand = brand;
+    this.model = model;
+    this.carrying = carrying;
+  }
+  startWashing() {
+    console.log(`${this.brand} ${this.model} запустил стирку`)
+  }
+}
+
+const samsung = new WashingMachine("samsung", "diamond", "5 кг");
+samsung.startWashing();
 
 
+class VerticalWashing extends WashingMachine {
+  constructor(brand, model, carrying, width, height, length) {
+    super(brand, model, carrying)
+    this.height = height;
+    this.width = width;
+    this.length = length;
+  }
+  dimensions() {
+    console.log(`Габариты стиральной машины ${this.brand} ${this.model} ${this.width}X${this.height}X${this.length}`)
+  }
+}
 
+const indesit = new VerticalWashing("indesit", "innex", "8 кг", 40, 90, 60);
+indesit.startWashing();
+indesit.dimensions()
