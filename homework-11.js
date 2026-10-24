@@ -60,6 +60,8 @@ const userDoublePassword = document.querySelector('#userDoublePassword');
 const resetModalInput = document.querySelector('#resetModalInputBtn');
 const submitTheForm = document.querySelector('#submitTheFormBtn');
 const resetBtn = document.getElementById('resetModalInputBtn');
+const modalClass = document.querySelector('.modal');
+const modalOverlay = document.querySelector('.modal-overlay');
 
 //Реализация кнопки сброса полей ввода
 resetModalInput.addEventListener('click', () => {
