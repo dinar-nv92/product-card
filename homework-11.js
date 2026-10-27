@@ -1,60 +1,54 @@
+import { Modal } from './Modal.js';
+import { Form } from './Form.js';
 4. //Добавление валидации почты и вывод в консоль лог объекта { email: 'введенная почта' }
-const mailFromFooter = document.querySelector('.email-form__input');
-const subscriptionToShares = document.querySelector('.email-form__button');
-const subForm = document.getElementById('email-form')
-subForm.addEventListener('submit', (event) => {
+const registrationForm = new Form('email-form');
+registrationForm.element.addEventListener('submit', (event) => {
   event.preventDefault();
-  const email = mailFromFooter.value
-   if (!email || email.length > 254 || /\s/.test(email)) {
-    return false;
+  const values = registrationForm.getValues();
+  console.log(values);
+  
+  const email = values.email || '';
+  function isEmailValid(email) {
+    if (!email || email.length > 254 || /\s/.test(email)) {
+      return false;
+    }
+
+    const parts = email.split('@');
+    if (parts.length !== 2) return false;
+
+    const [local, domain] = parts;
+    if (!local || local.startsWith('.') || local.endsWith('.') || local.includes('..')) {
+      return false;
+    }
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(local)) {
+      return false;
+    }
+
+    if (!domain || domain.startsWith('-') || domain.endsWith('-') || domain.includes('--') || domain.includes('..')) {
+      return false;
+    }
+
+    const labels = domain.split('.');
+    if (labels.length < 2) return false;
+    const tld = labels[labels.length - 1];
+    if (tld.length < 2 || !/^[a-zA-Z]+$/.test(tld)) {
+      return false;
+    }
+    return true;
   }
-
-  const parts = email.split('@');
-  if (parts.length !== 2) return false;
-
-  const [local, domain] = parts;
-  if (!local || local.startsWith('.') || local.endsWith('.') || local.includes('..')) {
-    return false;
-  }
-  if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(local)) {
-    return false;
-  }
-
-  if (!domain || domain.startsWith('-') || domain.endsWith('-') || domain.includes('--') || domain.includes('..')) {
-    return false;
-  }
-
-  const labels = domain.split('.');
-  if (labels.length < 2) return false;
-  const tld = labels[labels.length - 1];
-  if (tld.length < 2 || !/^[a-zA-Z]+$/.test(tld)) {
-    return false;
-  }
-
-  const resultValid = {
-    email: `${mailFromFooter.value}`
-  };
-
-  console.log(resultValid);
-
-  return resultValid;
+  console.log(isEmailValid(email))
+  registrationForm.reset()
 });
 
 // 5. Создание модального окна
+const registrationModal = new Modal('registration-modal');
 const registrationBtn = document.querySelector('#registration-button');
-const closeModalBtn = document.querySelector('#closeModalWindow');
-const modalClass = document.querySelector('.modal');
-const modalOverlay = document.querySelector('.modal-overlay');
 
-registrationBtn.addEventListener('click', () => {
-  modalClass.classList.add('modal-showed');
-  modalOverlay.classList.add('overlay-active');
-});
-
-closeModalBtn.addEventListener('click', () => {
-  modalClass.classList.remove('modal-showed');
-  modalOverlay.classList.remove('overlay-active');
-})
+if (registrationBtn) {
+  registrationBtn.addEventListener('click', () => {
+    registrationModal.open();
+  });
+}
 
 //6. Форма для регистрации
 const userName = document.querySelector('#userName');
@@ -66,6 +60,8 @@ const userDoublePassword = document.querySelector('#userDoublePassword');
 const resetModalInput = document.querySelector('#resetModalInputBtn');
 const submitTheForm = document.querySelector('#submitTheFormBtn');
 const resetBtn = document.getElementById('resetModalInputBtn');
+const modalClass = document.querySelector('.modal');
+const modalOverlay = document.querySelector('.modal-overlay');
 
 //Реализация кнопки сброса полей ввода
 resetModalInput.addEventListener('click', () => {
@@ -108,6 +104,3 @@ submitTheForm.addEventListener('click', () => {
 modalClass.classList.remove('modal-showed');
 modalOverlay.classList.remove('overlay-active');
 })
-
-
- 
