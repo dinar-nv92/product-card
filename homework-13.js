@@ -11,21 +11,24 @@ class Drink {
     this.price = price;
     this.#temperature = temperature;
   }
+
   getInfo() {
     return `Название напитка:${this.name}, размер:${this.size}, цена:${this.price} руб.`
   }
+
+  setIdealTemp(newTemp) {
+    this.#temperature = newTemp
+  }
+
   #prepare() {
     console.log(`Готовим напиток:${this.name} (${this.size})`)
-    const idealTemp = this.setIdealTemp();
-    this.#temperature = idealTemp;
     console.log(`Ваш напиток:${this.name} (${this.size}) готов. Температура:${this.#temperature}°С`)
   }
-  setIdealTemp() {
-    return 0
-  }  
+
   getTemperature() {
     return this.#temperature
   }
+
   serve() {
     this.#prepare()
     console.log(`Напиток ${this.name} (${this.size}) подан`)
@@ -33,14 +36,12 @@ class Drink {
 }
 
 class Coffee extends Drink {
-  constructor(size, price, roastLevel, country) {
-    super("Кофе", size, price, 0)
+  constructor(size, price, temperature, roastLevel, country) {
+    super("Кофе", size, price, temperature)
     this.roastLevel = roastLevel;
     this.country = country;
   }
-  setIdealTemp() {
-    return 50
-  }
+
   getInfo() {
     const baseInfo = super.getInfo()
     return `${baseInfo}, степень помола:${this.roastLevel}, страна:${this.country}`
@@ -48,14 +49,12 @@ class Coffee extends Drink {
 }
 
 class Tea extends Drink {
-  constructor (size, price, teaType, sugar) {
-    super ("Чай", size, price, 0)
+  constructor (size, price, temperature, teaType, sugar) {
+    super ("Чай", size, price, temperature)
     this.teaType = teaType;
     this.sugar = sugar
   }
-  setIdealTemp() {
-    return 70
-  }
+
   getInfo() {
     const baseInfo = super.getInfo()
     return `${baseInfo}, тип листа:${this.teaType}, наличие сахара:${this.sugar}`
@@ -63,14 +62,12 @@ class Tea extends Drink {
 }
 
 class Lemonade extends Drink {
-  constructor (size, price, presenceOfGas, taste){
-    super ("Лимонад", size, price, 0)
+  constructor (size, price, temperature, presenceOfGas, taste){
+    super ("Лимонад", size, price, temperature)
     this.presenceOfGas = presenceOfGas;
     this.taste = taste
   }
-  setIdealTemp() {
-    return 5
-  }
+
   getInfo() {
     const baseInfo = super.getInfo()
     return `${baseInfo}, наличие газа:${this.presenceOfGas}, вкус:${this.taste}`
@@ -78,33 +75,33 @@ class Lemonade extends Drink {
 }
 
 class Milkshake extends Drink {
-  constructor (size, price, syrup, berries) {
-    super ("Молочный коктейль", size, price, 0)
+  constructor (size, price, temperature, syrup, berries) {
+    super ("Молочный коктейль", size, price, temperature)
     this.syrup = syrup;
     this.berries = berries
   }
-   setIdealTemp() {
-    return 7
-  }
+
   getInfo() {
     const baseInfo = super.getInfo()
     return `${baseInfo}, сироп:${this.syrup}, ягоды:${this.berries}`
   }
 }
 
-const latte = new Coffee ("большой", 250, "сильный", "Эфиопия");
-const greenTea = new Tea ("средний", 75, "черный лист", "с сахаром");
-const tarkhun = new Lemonade ("маленький", 30, "газированный", "тархун");
-const classicMilkshake = new Milkshake ("большой", 300, "без сиропа", "клубника")
+const latte = new Coffee ("большой", 250, 60, "сильный", "Эфиопия");
+const greenTea = new Tea ("средний", 75, 75, "черный лист", "с сахаром");
+const tarkhun = new Lemonade ("маленький", 30, 5, "газированный", "тархун");
+const classicMilkshake = new Milkshake ("большой", 300, 7, "без сиропа", "клубника")
 
 class Cafe {
   constructor(name, location) {
     this.name = name;
     this.location = location
   }
+
   getInfo() {
     return `Название кафе:${this.name}, расположение:${this.location}`
   }
+
   orderDrink(drinkName) {
     drinkName.serve()
     console.log(drinkName.getInfo())
